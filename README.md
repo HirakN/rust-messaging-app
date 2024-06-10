@@ -1,7 +1,7 @@
 # Messaging App
-Small mess around with
+Small mess around with rust. making a chat app with a backend API to handle the messaging
 
-#### Windows
+#### Windows compilation
 
 https://github.com/Jake-Shadle/xwin
 https://bevy-cheatbook.github.io/setup/cross/linux-windows.html#first-time-setup-msvc
@@ -24,5 +24,5 @@ EOF
 
 ## creating dynamodb table
 ```bash
- aws dynamodb create-table --region eu-west-1 --endpoint http://localhost:8000 --table-name test --attribute-definitions AttributeName=name,AttributeType=S AttributeName=timestamp,AttributeType=S --key-schema AttributeName=name,KeyType=HASH AttributeName=timestamp,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=2,WriteCapacityUnits=2
+ aws dynamodb delete-item --region eu-west-1 --endpoint-url http://localhost:8000 --table-name test --key '{"name": {"S": "hn"},"timestamp":{"S":"2024-06-04 13:10:32.929340763 UTC"}}'
 ```
