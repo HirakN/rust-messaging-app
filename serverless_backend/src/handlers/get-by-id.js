@@ -1,12 +1,11 @@
 // Create clients and set shared const values outside of the handler.
 
 // Get the DynamoDB table name from environment variables
-const tableName = process.env.SAMPLE_TABLE;
+const tableName = process.env.TABLE_NAME;
 
 // Create a DocumentClient that represents the query to add an item
 const dynamodb = require('aws-sdk/clients/dynamodb');
 const docClient = new dynamodb.DocumentClient({
-  endpoint: 'http://host.docker.internal:8000',
   region: 'eu-west-1'
 });
 

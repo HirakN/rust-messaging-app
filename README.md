@@ -1,7 +1,5 @@
 # Messaging App
-
-
-## Build
+Small mess around with
 
 #### Windows
 
@@ -23,3 +21,8 @@ rustflags = [
   "-Lnative=/opt/xwin/sdk/lib/ucrt/x86_64"
 ]
 EOF
+
+## creating dynamodb table
+```bash
+ aws dynamodb create-table --region eu-west-1 --endpoint http://localhost:8000 --table-name test --attribute-definitions AttributeName=name,AttributeType=S AttributeName=timestamp,AttributeType=S --key-schema AttributeName=name,KeyType=HASH AttributeName=timestamp,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=2,WriteCapacityUnits=2
+```
